@@ -13,7 +13,7 @@ function takesFileOdds (odds) {
     result.push(a);
     result.push(b);
     result.push(c);
-    return result;
+    return resul;
 } 
 
 function consolesolution () {  
