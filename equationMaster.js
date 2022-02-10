@@ -16,6 +16,31 @@ function takesFileOdds (odds) {
     return result;
 } 
 
+function consolesolution () {  
+    let a, b, c;
+    let res = [];
+    let str;
+    do {
+        str = reader.question("pin a: \n");
+        a  = Number(str);
+        if(isNaN(a)) console.log(`Error. Expected a valid real number, got ${str} instead`);
+    } while (isNaN(a));
+    do {
+        str = reader.question("pin b: \n");
+        b  = Number(str);
+        if(isNaN(b)) console.log(`Error. Expected a valid real number, got ${str} instead`);
+    } while (isNaN(b));
+    do {
+        str = reader.question("pin c: \n");
+        c  = Number(str);
+        if(isNaN(c)) console.log(`Error. Expected a valid real number, got ${str} instead`);
+    } while (isNaN(c));
+    res.push(a);
+    res.push(b);
+    res.push(c);
+    return res;
+}
+
 const solution = (coef) => {
     let x1, x2;
     const a = coef[0];
@@ -40,3 +65,5 @@ const solution = (coef) => {
 
 const readCoef = takesFileOdds(values);
 solution(readCoef);
+const consoleCoef = consolesolution();
+solution(consoleCoef);
