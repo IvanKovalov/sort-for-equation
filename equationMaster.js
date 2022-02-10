@@ -1,5 +1,21 @@
 'use stict'
 
+fs = require('fs');
+const reader = require("readline-sync");
+
+const values = fs.readFileSync("text.txt", "utf8")
+
+function takesFileOdds (odds) {
+    let result = [];
+    const a = Number(odds[0]);
+    const b = Number(odds[2]);
+    const c = Number(odds[4]);
+    result.push(a);
+    result.push(b);
+    result.push(c);
+    return result;
+} 
+
 const solution = (coef) => {
     let x1, x2;
     const a = coef[0];
@@ -21,3 +37,6 @@ const solution = (coef) => {
         console.log('There are 0 roots\n');
     }
 }
+
+const readCoef = takesFileOdds(values);
+solution(readCoef);
