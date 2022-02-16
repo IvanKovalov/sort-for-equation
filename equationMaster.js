@@ -2,7 +2,7 @@
 
 fs = require('fs');
 const reader = require("readline-sync");
-
+const file = process.argv[2];
 const values = fs.readFileSync("text.txt", "utf8")
 
 function takesFileOdds (odds) {
@@ -62,8 +62,11 @@ const solution = (coef) => {
         console.log('There are 0 roots\n');
     }
 }
-
+if(file){
 const readCoef = takesFileOdds(values);
 solution(readCoef);
+}
+else{
 const consoleCoef = consolesolution();
 solution(consoleCoef);
+}
