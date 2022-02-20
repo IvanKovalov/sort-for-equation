@@ -3,7 +3,7 @@
 fs = require('fs');
 const reader = require("readline-sync");
 const file = process.argv[2];
-const values = fs.readFileSync("text.txt", "utf8")
+const values = fs.readFileSync(file, "utf8")
 
 function takesFileOdds (odds) {
     let result = [];
